@@ -1,0 +1,32 @@
+JPA : 
+Một số @Annotation cần lưu ý :
+@GeneratedValue :
+ GenerationType có 5 loại:
+ IDENTITY: Khóa chính được tự động tăng bởi cơ sở dữ liệu.
+ SEQUENCE: Khóa chính được tạo bởi một trình tự trong cơ sở dữ liệu.
+ TABLE: Khóa chính được tạo bởi một bảng trong cơ sở dữ liệu.
+ AUTO: Spring sẽ tự động chọn chiến lược tạo khóa chính phù hợp nhất với cơ sở dữ liệu đang được sử dụng.
+ NONE: Khóa chính được cung cấp bởi người dùng.
+@Enumerated :  ánh xạ một enum sang giá trị của nó trong cơ sở dữ liệu.
+	Có hai loại ánh xạ enum trong JPA:
+	STRING: Enum sẽ được lưu trữ dưới dạng chuỗi trong cơ sở dữ liệu. Đây là loại ánh xạ mặc định trong JPA.
+	ORDINAL: Enum sẽ được lưu trữ dưới dạng số thứ tự của nó trong cơ sở dữ liệu.
+	Ví dụ : @Enumerated(EnumType.STRING)
+		public enum Gender {
+			MALE,
+			FEMALE,
+			OTHER
+		}
+
+Enum là một kiểu dữ liệu đặc biệt trong lập trình máy tính, cho phép bạn định nghĩa một tập hợp các hằng số có tên.
+ví dụ : Gender gender = gender.MALE;
+
+
+Lombok : 
+Một số @Annotation cần lưu ý :
+@Data : tạo ra các getter, setter, equals, hashCode, toString, và các constructor cho các thuộc tính của một class.
+@Builder : tự động tạo ra một builder cho class. ví dụ : User user = User.builder().fullname("John Doe").age(30).build();
+@NoArgsConstructor: contructor không tham số.
+@AllArgsConstructor: contructor có tham số.
+@RequiredArgsConstructor: contructor có tham số ĐC CHỈ ĐỊNH.
+@Value :  tạo ra các giá trị cho các thuộc tính

@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+    #dựa vào thằng dưới
+#    depends_on:
+#      - postgres
+  postgres1:
+    image: postgres   
+    container_name: Museum
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_USER=root
+      - POSTGRES_DB=orpheo_db
